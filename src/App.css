@@ -22,6 +22,36 @@
   font-size: large;
 }
 
+
+.center {
+  font-size: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.dinner1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./images/brunch.jpg");
+  background-size: cover
+}
+
+.dinner2 {
+ display: none;
+ position: absolute;
+ top: 0;
+ left: 100%;
+ width: 100vw;
+ height: 100vh;
+ background-image: url("./images/asia.jpg");
+ background-size: cover
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
