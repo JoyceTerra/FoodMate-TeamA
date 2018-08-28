@@ -6,5 +6,5 @@ import registerServiceWorker from './registerServiceWorker';
 import Filter from './Filter'
 
 
-ReactDOM.render(<Filter/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();
