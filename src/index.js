@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import Filter from './Filter'
+import Filter from './components/Filter'
 
 
 ReactDOM.render(<Filter/>, document.getElementById('root'));
