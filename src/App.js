@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 import { PhotoSwipe } from 'react-photoswipe';
-import 'react-photoswipe/lib/photoswipe.css'
+import 'react-photoswipe/lib/photoswipe.css';
+import store from './store';
+import './App.css';
 
 
 
@@ -49,14 +49,16 @@ function handleClose() {
 class App extends Component {
   render() {
     return (
-      <div className="App">
-      <PhotoSwipe
-      isOpen={isOpen}
-      items={items}
-      options={options}
-      onClose={handleClose}
-      />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+        <PhotoSwipe
+          isOpen={isOpen}
+          items={items}
+          options={options}
+          onClose={handleClose}
+        />
+        </div>
+      </Provider>
     );
   }
 }

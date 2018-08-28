@@ -34,20 +34,20 @@ class Filter extends Component{
                <div>
                 <h1>I Want to HAVE</h1>
                 <div class ="Check">
-                <input  type="checkbox" name="fruit" value="LUNCH" />Lunch
+                <input  type="checkbox" name="lunch" value="LUNCH" />Lunch
                 <br/>
-                <input  type="checkbox" name="fruit" value="DINNER" />Dinner
+                <input  type="checkbox" name="dinner" value="DINNER" />Dinner
                 <br/>
                 <h3>Price Range</h3>
-                <input  type="checkbox" name="fruit" value="15-25" />15-25
+                <input  type="checkbox" name="fifteen" value="fifteen" />15 to 25 euros
                 <br/>
-                <input  type="checkbox" name="fruit" value="26-40" />26-40
+                <input  type="checkbox" name="twenty-six" value="twenty-six" />26 to 40 euros
                 <br/>
-                <input  type="checkbox" name="fruit" value="41-65" />41-65
+                <input  type="checkbox" name="forty-one" value="forty-one" />41 to 65 euros
                 <br/>
-                <input  type="checkbox" name="fruit" value="66-100" />66-100
+                <input  type="checkbox" name="sixty-six" value="sixty-six" />66 to 100 euros
                 <br/>
-                <input  type="checkbox" name="fruit" value="Higher" />Higher
+                <input  type="checkbox" name="higher" value="higher" />Higher
                 <br/>
                 <br/>
                 <button>Submit</button>
