@@ -1,16 +1,14 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import Carousel from './components/Carousel';
-//import { preLoadImages } from './components/Utils';
+import {BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
 import store from './store'
-// import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-// import ReactDOM from 'react-dom';
-//  import Filter from './components/Filter'
 import Menu from './components/Menu'
 import { Provider } from 'react-redux'
-import Name from './components/name'
+// import Name from './components/name'
+import Filter from './components/Filter'
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -26,23 +24,18 @@ const App = () => (
     <div style={styles}>
       <div>
         <Menu />
-
-      </div>
-      <div>
-      <h2>What type of cuisine </h2>
-      <h2 id="styling">you prefer?</h2>
-      </div>
-      <Name /> 
-     <Carousel/>
+        <Route exact path="/" component={ Carousel } />
+        <Route  exact path="/filter/" component={ Filter } /> 
+    {/* <Name />  */}
+    </div>
     </div>
   </Provider>
 );
 
-// preLoadImages.apply(null, IMAGES);
-
-render(
-  
-<App />,
+ReactDOM.render(
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
 document.getElementById('root'));
 registerServiceWorker();
 
