@@ -8,7 +8,8 @@ import registerServiceWorker from './registerServiceWorker';
 import Menu from './components/Menu'
 import { Provider } from 'react-redux'
 // import Name from './components/name'
-import Filter from './components/Filter'
+//import Filter from './components/Filter'
+import Home from './components/Home'
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -25,9 +26,9 @@ const App = () => (
     <div style={styles}>
       <div>
         <Menu />
-        <Route exact path="/" component={ Carousel } />
+    {/*    <Route exact path="/" component={ Carousel } />
         <Route  exact path="/filter/" component={ Filter } /> 
-    {/* <Name />  */}
+        <Name />  */}
     </div>
     </div>
   </Provider>
@@ -35,7 +36,7 @@ const App = () => (
 
 ReactDOM.render(
   <BrowserRouter>
-    <App/>
+    <Home/>
   </BrowserRouter>,
 document.getElementById('root'));
 registerServiceWorker();
