@@ -3,19 +3,20 @@ import React, { Component } from 'react';
 // const  { DOM: { input, select, textarea } } = React
 
 export default class Filter extends Component { 
-    constructor(props){
-        super(props)
-        this.state = {value: ''}
+    // constructor(props){
+    //     super(props)
+    //     this.state = {value: ''}
+    //     console.log(this.state)
 
-        this.handleFilterForm - this.handleFilterForm.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this);
+    //     this.handleFilterForm - this.handleFilterForm.bind(this)
+    //     this.handleSubmit = this.handleSubmit.bind(this);
 
-    }
-    handleFilterForm(){}
+   // }
+    // handleFilterForm(){}
 
-    handleSubmit(event){
-        console.log('Submitted form: ' + this.state.value)
-    }
+    // handleSubmit(event){
+    //     console.log('Submitted form: ' + this.state.value)
+    // }
 
     render(){
     return (
@@ -24,7 +25,7 @@ export default class Filter extends Component {
                onSubmit={ this.handleSubmit }
              >
                     <label>I want to have</label>
-                    <div class ="Check">
+                    <div className ="Check">
                         <label><input  type="checkbox" name="Lunch"  value="Lunch" className="filterForm-checkbox" />Lunch</label>
                         <br/>
                         <label><input  type="checkbox" name="Dinner" value="Dinner" className="filterForm-checkbox" />Dinner</label>
@@ -48,6 +49,8 @@ export default class Filter extends Component {
     
 }
 }
+
+// export defaut connect(null, null)(Filter)
             
 
 

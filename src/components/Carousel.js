@@ -1,6 +1,7 @@
 import React from 'react';
 import Swipeable from 'react-swipeable';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom'
 
 const IMG_WIDTH = "100vw";
 const IMG_HEIGHT = "72vh";
@@ -48,7 +49,7 @@ class SimpleCarousel extends React.Component {
   }
 
   render() {
-    const { images } = this.props;
+   // const { images } = this.props;
     const { imageIdx = 0 } = this.state;
     const imageStyles = {
       width: IMG_WIDTH,
@@ -76,7 +77,7 @@ class SimpleCarousel extends React.Component {
           </div>
         </Swipeable>
         <div >
-          <p onClick={() => this.clickedFood()}>Choose cuisine</p>
+        <Link to ={`/filter`}><p  onClick={() => this.clickedFood()}>Choose cuisine</p></Link>
         </div>
       </div>
     )

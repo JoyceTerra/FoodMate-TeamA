@@ -1,6 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import Carousel from './components/Carousel';
+import {BrowserRouter, Route } from 'react-router-dom';
 //import { preLoadImages } from './components/Utils';
 import './index.css';
 import store from './store'
@@ -11,6 +12,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Menu from './components/Menu'
 import { Provider } from 'react-redux'
 import Name from './components/name'
+import Filter from './components/Filter'
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -26,6 +28,9 @@ const App = () => (
     <div style={styles}>
       <div>
         <Menu />
+        {/* <Route exact path="/" component={ Carousel } /> */}
+         <Route  exact path="/filter/" component={ Filter } /> 
+
 
       </div>
       <div>
@@ -40,9 +45,10 @@ const App = () => (
 
 // preLoadImages.apply(null, IMAGES);
 
-render(
-  
-<App />,
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
 document.getElementById('root'));
 registerServiceWorker();
 
