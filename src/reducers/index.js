@@ -2,9 +2,11 @@ import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 import food from './food'
 import image from './image'
+import me from './me'
 
 export default combineReducers({
   food,
   image,
-  form: formReducer
+  form: formReducer,
+  me
 })
