@@ -1,5 +1,6 @@
 import React from 'react';
 import Swipeable from 'react-swipeable';
+import {connect} from 'react-redux';
 
 const IMG_WIDTH = "100vw";
 const IMG_HEIGHT = "72vh";
@@ -21,7 +22,7 @@ const LEFT = '+1';
 // const buttonLeft = {...buttonStyles, float: 'left'};
 // const buttonRight = { ...buttonStyles, float: 'right' };
 
-export default class SimpleCarousel extends React.Component {
+class SimpleCarousel extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = { imageIdx: 0 };
@@ -52,7 +53,7 @@ export default class SimpleCarousel extends React.Component {
     const imageStyles = {
       width: IMG_WIDTH,
       height: IMG_HEIGHT,
-      backgroundImage: `url(${images[imageIdx]})`,
+      backgroundImage: `url(${this.props.image[imageIdx]})`,
     };
     return (
       <div>
@@ -62,6 +63,7 @@ export default class SimpleCarousel extends React.Component {
           onSwipedLeft={() => this.onSwiped(LEFT)}
           onSwipedRight={() => this.onSwiped(RIGHT)}
         >
+        {console.log(this.props.image)}
           <div style={imageStyles} >
             <button
               onClick={() => this.onSwiped(RIGHT)}
@@ -81,6 +83,9 @@ export default class SimpleCarousel extends React.Component {
   }
 }
 
+const mapStateToProps = ({image}) => ({image}) 
 
+
+export default connect(mapStateToProps)(SimpleCarousel)
 
 
