@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import updateMi from './actions/updateMi'
 
 
-
-
 class Name extends React.Component {
   state = {value: ""}
 
@@ -15,9 +13,7 @@ handleChange = (event) => {
 }
 handleSubmit = (event) => {
     event.preventDefault()
-    this.props.updateMi(this.state.value)
-    console.log(this.state.value)
-    
+    this.props.updateMi(this.state.value)  
 }
 
   render() {
@@ -25,7 +21,6 @@ handleSubmit = (event) => {
     return (
         <form onSubmit={this.handleSubmit}>
             <label>
-                {console.log(this.state.value)}
                 Name:
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
             </label>

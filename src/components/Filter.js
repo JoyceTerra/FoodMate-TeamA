@@ -1,24 +1,7 @@
 import React, { Component } from 'react';
-// import './Filter.css';
-// const  { DOM: { input, select, textarea } } = React
 
 export default class Filter extends Component { 
-    // constructor(props){
-    //     super(props)
-    //     this.state = {value: ''}
-    //     console.log(this.state)
-
-    //     this.handleFilterForm - this.handleFilterForm.bind(this)
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-
-   // }
-    // handleFilterForm(){}
-
-    // handleSubmit(event){
-    //     console.log('Submitted form: ' + this.state.value)
-    // }
-
-    render(){
+   render(){
     return (
             <form 
                className="filterForm"
