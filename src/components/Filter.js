@@ -3,16 +3,13 @@ import React, { Component } from 'react';
 export default class Filter extends Component { 
    render(){
     return (
-            <form 
-               className="filterForm"
-               onSubmit={ this.handleSubmit }
-             >
-                    <label>I want to have</label>
-                    <div className ="Check">
-                        <label><input  type="checkbox" name="Lunch"  value="Lunch" className="filterForm-checkbox" />Lunch</label>
-                        <br/>
-                        <label><input  type="checkbox" name="Dinner" value="Dinner" className="filterForm-checkbox" />Dinner</label>
-                        <br/>
+        <form className="filterForm" onSubmit={ this.handleSubmit }>
+            <div className ="FoodTime">
+                <label>I want to have: </label>
+                <br/>
+                        <label><input name="foodtime" component={this.props} type="radio" value="dinner" /> Dinner   </label>
+                        <label><input name="foodtime" component={this.props} type="radio" value="lunch" /> Lunch</label>
+                
                         <h3>Price Range</h3>
                         <label><input  type="checkbox" name="fifteen-range"  value="fifteen" className="filterForm-checkbox" />15 to 25 euros</label>
                         <br/>
