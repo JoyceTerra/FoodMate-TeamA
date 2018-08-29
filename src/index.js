@@ -1,12 +1,14 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import Carousel from './components/Carousel';
-import { preLoadImages } from './components/Utils';
+import {BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import store from './store'
 import registerServiceWorker from './registerServiceWorker';
-//  import Filter from './components/Filter'
 import Menu from './components/Menu'
+import { Provider } from 'react-redux'
+// import Name from './components/name'
+import Filter from './components/Filter'
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -14,30 +16,27 @@ const styles = {
   border: 0
 };
 
-ReactDOM.render(
-<App />,
-document.getElementById('root'));
-registerServiceWorker();
-const IMG_1 = require('./images/asia2.jpg');
-const IMG_2 = require('./images/asia.jpg')
-const IMG_3 = require('./images/brunch.jpg')
-const IMG_4 = require('./images/pizza.jpg')
-const IMG_5 = `https://unsplash.it/342/253`;
-const IMAGES = [IMG_1, IMG_2, IMG_3, IMG_4, IMG_5];
+
+
+
 
 const App = () => (
-  <div style={styles}>
-    <div>
-      <Menu />
+  <Provider store={ store }> 
+    <div style={styles}>
+      <div>
+        <Menu />
+        <Route exact path="/" component={ Carousel } />
+        <Route  exact path="/filter/" component={ Filter } /> 
+    {/* <Name />  */}
     </div>
-    <div>
-    <h2>What type of cuisine </h2>
-    <h2 id="styling">you prefer?</h2>
     </div>
-    <Carousel images={IMAGES}  />
-  </div>
+  </Provider>
 );
 
-preLoadImages.apply(null, IMAGES);
+ReactDOM.render(
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
+document.getElementById('root'));
+registerServiceWorker();
 
-render(<App />, document.getElementById('root'));
