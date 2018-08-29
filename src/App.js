@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { PhotoSwipe } from 'react-photoswipe';
 import store from './store';
-import { filterForm } from './components/Filter'
 import 'react-photoswipe/lib/photoswipe.css';
 import './App.css';
 
@@ -59,7 +58,6 @@ class App extends Component {
           onClose={handleClose}
         />
         </div>
-        <filterForm />
       </Provider>
     );
   }

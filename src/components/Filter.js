@@ -1,70 +1,53 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import './Filter.css';
+import React, { Component } from 'react';
+// import './Filter.css';
 // const  { DOM: { input, select, textarea } } = React
-import store from '../store'
 
-let employee = [{
-    "employeeId": "1",
-     "name": "bob",
-    "MealType" : "Lunch",
-    "PriceRange": 30
-},{
-    "employeeId": "2",
-    "name": "steve",
-    "MealType" : "Dinner",
-    "PriceRange": 15
-},
+export default class Filter extends Component { 
+    constructor(props){
+        super(props)
+        this.state = {value: ''}
 
-{
-    "employeeId": "3",
-    "name": "steve",
-    "MealType" : "Dinner",
-    "PriceRange": 150
-},
+        this.handleFilterForm - this.handleFilterForm.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
 
-{
-    "employeeId": "4",
-    "name": "steve",
-    "MealType" : "Lunch",
-    "PriceRange": 66
-}
-];
+    }
+    handleFilterForm(){}
 
-const filterForm = (props) => {
-    const { handleFilterForm } = props
+    handleSubmit(event){
+        console.log('Submitted form: ' + this.state.value)
+    }
+
+    render(){
     return (
             <form 
                className="filterForm"
-               onSubmit={ handleFilterForm }
+               onSubmit={ this.handleSubmit }
              >
                     <label>I want to have</label>
                     <div class ="Check">
-                        <label><Field  type="checkbox" name="Lunch"  value="Lunch" className="filterForm-checkbox" />Lunch</label>
+                        <label><input  type="checkbox" name="Lunch"  value="Lunch" className="filterForm-checkbox" />Lunch</label>
                         <br/>
-                        <label><Field  type="checkbox" name="Dinner" value="Dinner" className="filterForm-checkbox" />Dinner</label>
+                        <label><input  type="checkbox" name="Dinner" value="Dinner" className="filterForm-checkbox" />Dinner</label>
                         <br/>
                         <h3>Price Range</h3>
-                        <label><Field  type="checkbox" name="fifteen-range"  value="fifteen" className="filterForm-checkbox" />15 to 25 euros</label>
+                        <label><input  type="checkbox" name="fifteen-range"  value="fifteen" className="filterForm-checkbox" />15 to 25 euros</label>
                         <br/>
-                        <label><Field  type="checkbox" name="twentySix-range" value="twenty-six" className="filterForm-checkbox" />26 to 40 euros</label>
+                        <label><input  type="checkbox" name="twentySix-range" value="twenty-six" className="filterForm-checkbox" />26 to 40 euros</label>
                         <br/>
-                        <label><Field  type="checkbox" name="fortyOne-range" value="forty-one" className="filterForm-checkbox"  />41 to 65 euros</label>
+                        <label><input  type="checkbox" name="fortyOne-range" value="forty-one" className="filterForm-checkbox"  />41 to 65 euros</label>
                         <br/>
-                        <label><Field  type="checkbox" name="sixtSix-range"  value="sixty-six" className="filterForm-checkbox"  />66 to 100 euros</label>
+                        <label><input  type="checkbox" name="sixtSix-range"  value="sixty-six" className="filterForm-checkbox"  />66 to 100 euros</label>
                         <br/>
-                        <label><Field  type="checkbox" name="higher" value="higher" className="filterForm-checkbox"  />Higher</label>
+                        <label><input  type="checkbox" name="higher" value="higher" className="filterForm-checkbox"  />Higher</label>
                         <br/>
                         <br/>
-                        <button type="submit"className="filterForm-SubmitButton"></button> Submit
-                    
+                        <button type="submit"className="filterForm-SubmitButton">Submit</button> 
                     </div>
                 </form>
-    )
+                )
+    
+}
 }
             
 
 
-export default  reduxForm({
-    form: 'filterForm'
- }) (filterForm );
