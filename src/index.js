@@ -19,6 +19,7 @@ const styles = {
 
 
 
+
 const App = () => (
   <Provider store={ store }> 
     <div style={styles}>
