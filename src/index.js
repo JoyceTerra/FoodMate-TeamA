@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactDOM } from 'react';
 import { render } from 'react-dom';
 import Carousel from './components/Carousel';
 import { preLoadImages } from './components/Utils';
@@ -14,10 +14,7 @@ const styles = {
   border: 0
 };
 
-ReactDOM.render(
-<App />,
-document.getElementById('root'));
-registerServiceWorker();
+
 const IMG_1 = require('./images/asia2.jpg');
 const IMG_2 = require('./images/asia.jpg')
 const IMG_3 = require('./images/brunch.jpg')
@@ -40,4 +37,5 @@ const App = () => (
 
 preLoadImages.apply(null, IMAGES);
 
-render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
