@@ -46,19 +46,21 @@ function handleClose() {
 
 
 
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <div className="App">
-        <PhotoSwipe
-          isOpen={isOpen}
-          items={items}
-          options={options}
-          onClose={handleClose}
-        />
+        <PhotoSwipe />
+        
         </div>
+      
       </Provider>
+
+      
+
+     
     );
   }
 }
