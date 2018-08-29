@@ -33,10 +33,10 @@ class SimpleCarousel extends React.Component {
     const change = direction === RIGHT ? RIGHT : LEFT;
     const adjustedIdx = this.state.imageIdx + Number(change);
     let newIdx;
-    if (adjustedIdx >= images.length) {
+    if (adjustedIdx >= this.props.image.length) {
       newIdx = 0;
     } else if (adjustedIdx < 0) {
-      newIdx = images.length - 1
+      newIdx = this.props.image.length - 1
     } else {
       newIdx = adjustedIdx;
     }
