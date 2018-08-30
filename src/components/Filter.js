@@ -13,6 +13,18 @@ export default class Filter extends Component {
                         <br/>
                         <label><input  type="checkbox" name="Dinner" value="Dinner" className="filterForm-checkbox" />Dinner</label>
                         <br/>
+                        <h3>Age Range</h3>
+                        <label><input  type="checkbox" name="eighteen-twentyfive"  value="fifteen" className="filterForm-checkbox" />18 to 25 </label>
+                        <br/>
+                        <label><input  type="checkbox" name="twentySix-forty" value="twenty-six" className="filterForm-checkbox" />26 to 40 </label>
+                        <br/>
+                        <label><input  type="checkbox" name="fortyOne-sixtyfive" value="forty-one" className="filterForm-checkbox"  />41 to 65 </label>
+                        <br/>
+                        <label><input  type="checkbox" name="sixtSix- seventyfive"  value="sixty-six" className="filterForm-checkbox"  />66 to 75 </label>
+                        <br/>
+                        <label><input  type="checkbox" name="higher" value="Older" className="filterForm-checkbox"  />Older</label>
+                        <br/>
+                        <br/>
                         <h3>Price Range</h3>
                         <label><input  type="checkbox" name="fifteen-range"  value="fifteen" className="filterForm-checkbox" />15 to 25 euros</label>
                         <br/>
