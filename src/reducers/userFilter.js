@@ -8,7 +8,7 @@ export default (state = [], action = {}) => {
         case UPDATE_LUNCH:
             return action.payload.filter(user => user.MealType === "Lunch")   
         case UPDATE_DINNER:
-            return action.payload
+            return action.payload.filter(user => user.MealType === "Dinner")
         default: 
             return state 
     }
