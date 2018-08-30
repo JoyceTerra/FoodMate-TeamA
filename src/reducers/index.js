@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux'
-import { reducer as formReducer } from 'redux-form'
+//import { reducer as formReducer } from '../../../../.cache/typescript/2.9/node_modules/@types/redux-form'
 import food from './food'
 import image from './image'
 import me from './me'
-import UserReducer from './reducer-users';
+import users from './UserList';
 
 export default combineReducers({
   food,
   image,
-  form: formReducer,
+//  form: formReducer,
   me,
-  UserReducer
+  users
 })

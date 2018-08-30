@@ -9,17 +9,14 @@ import Menu from './components/Menu'
 import { Provider } from 'react-redux'
 // import Name from './components/name'
 import Filter from './components/Filter'
-import Home from './components/Home'
+import Profile from './components/Profile'
+
 
 const styles = {
   fontFamily: 'sans-serif',
   margin: 0,
   border: 0
 };
-
-
-
-
 
 const App = () => (
   <Provider store={ store }> 
@@ -28,15 +25,15 @@ const App = () => (
         <Menu />
         <Route exact path="/" component={ Carousel } />
         <Route  exact path="/filter/" component={ Filter } /> 
-      {/*  <Name />  */}
-    </div>
+        <Route  exact path="/AllProfiles/" component={ Profile } /> 
+      </div>
     </div>
   </Provider>
 );
 
 ReactDOM.render(
   <BrowserRouter>
-    <App/>
+   <App/>
   </BrowserRouter>,
 document.getElementById('root'));
 registerServiceWorker();

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 export default class Menu extends Component {
     constructor() {
@@ -67,8 +68,8 @@ export default class Menu extends Component {
                     this.dropdownMenu = element;
                   }}
                 >
-                  <button onClick={() => this.clickedProfile()}> Profile </button>
-                  <button onClick={() => this.clickedFoodP()}> Food preferences </button>
+                  <button onClick={() => this.clickedProfile()}> <Link to={"/AllProfiles"}>Profile</Link></button>
+                 <button onClick={() => this.clickedFoodP()}> Food preferences </button>
                   <button onClick={() => this.clickedMessage()}> Message </button>
                   <button onClick={() => this.clickedInvite()}> Invite </button>
                   <button onClick={() => this.clickedSettings()}> Settings </button>

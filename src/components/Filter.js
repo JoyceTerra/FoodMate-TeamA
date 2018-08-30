@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserList from '../containers/UserList';
 
 export default class Filter extends Component { 
    render(){
@@ -38,12 +39,19 @@ export default class Filter extends Component {
                         <br/>
                         <br/>
                         <button type="submit"className="filterForm-SubmitButton">Submit</button> 
-                    </div>
+                       </div>
+                       <br/>
+                       <br/>
+                       
+                       
                 </form>
-                )
-    
+                  
+    )
 }
 }
+   
+
+
 
 // export defaut connect(null, null)(Filter)
             

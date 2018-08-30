@@ -1,8 +1,5 @@
-
-//As reducers give data, that is why we need to export it. Creating dummy data....
-
-export default function () {
-    return [
+  
+const UserList = [
 
         {
             name: 'Rob',
@@ -43,4 +40,8 @@ export default function () {
 
     ]
 
-}
+    
+
+export default (state = UserList , action = {}) => {
+    return state
+  }
