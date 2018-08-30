@@ -1,9 +1,7 @@
 
 //As reducers give data, that is why we need to export it. Creating dummy data....
 
-export default function () {
-    return [
-
+const userData = [
         {
             name: 'Rob',
             //src:require("../image/1.jpg"),
@@ -39,8 +37,30 @@ export default function () {
             Age: 26,
             MealType: "Lunch",
             PriceRange: 19
+        },
+        {
+            name: 'Janet',
+           // src:require("../image/6.jpg"),
+            Age: 26,
+            MealType: "Lunch",
+            PriceRange: 33
+        },
+        {
+            name: 'Joyce',
+           // src:require("../image/7.jpg"),
+            Age: 25,
+            MealType: "Dinner",
+            PriceRange: 89
+        },
+        {
+            name: 'Simon',
+           // src:require("../image/7.jpg"),
+            Age: 32,
+            MealType: "Lunch",
+            PriceRange: 46
         }
-
     ]
 
-}
+    export default (state = userData, action = {}) => {
+        return state
+      }

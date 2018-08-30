@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
+import './Filter.css'
+import {connect} from 'react-redux';
+// import { reduxForm, Field } from 'redux-form'
 
-export default class Filter extends Component { 
+
+class Filter extends Component { 
    render(){
+       const handleSubmit = (event) => {
+           event.preventDefault()
+           const users = this.props.userData 
+           console.log(users)
+       }
+
     return (
+        <div>
             <form 
                className="filterForm"
-               onSubmit={ this.handleSubmit }
+               onSubmit={ handleSubmit }
              >
                     <label>I want to have</label>
                     <div className ="Check">
@@ -37,13 +48,27 @@ export default class Filter extends Component {
                         <label><input  type="checkbox" name="higher" value="higher" className="filterForm-checkbox"  />Higher</label>
                         <br/>
                         <br/>
-                        <button type="submit"className="filterForm-SubmitButton">Submit</button> 
+                        <button type="submit" className="filterForm-SubmitButton">Submit</button> 
                     </div>
-                </form>
+            </form>
+            <div>
+                <p>Find my Foodmate: ({this.props.userData.length})</p>
+                <br />
+                <div>
+                <button type="submit" id="testButton" onClick={ handleSubmit }>testbutton</button>
+                </div>
+            </div>
+        </div>
                 )
     
 }
 }
+
+
+const mapStateToProps = ({userData}) => ({userData}) 
+
+
+export default connect(mapStateToProps)(Filter)
 
 // export defaut connect(null, null)(Filter)
             
