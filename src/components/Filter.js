@@ -2,14 +2,26 @@ import React, { Component } from 'react';
 import './Filter.css'
 import {connect} from 'react-redux';
 // import { reduxForm, Field } from 'redux-form'
+import { updateLunch, updateAge } from './actions/updateFilter'
 
 
 class Filter extends Component { 
    render(){
+
        const handleSubmit = (event) => {
            event.preventDefault()
-           const users = this.props.userData 
-           console.log(users)
+           const ages = event.target.value.split('-')
+           const users = this.props.userData
+        //    const lunchFilter = users.filter(user => user.MealType === "Lunch")
+        //    const dinnerFilter = users.filter(user => user.MealType === "Dinner")
+            const minage = ages[0]
+            const maxage = ages[1]
+           const ageTo25 = users.filter(user => user.Age <= maxage && user.Age >= minage)
+        //    console.log(lunchFilter)
+        //    console.log(dinnerFilter)
+        //    console.log(ageTo25)
+            this.props.updateAge(users, minage, maxage)
+            this.props.updateLunch(users)
        }
 
     return (
@@ -25,7 +37,7 @@ class Filter extends Component {
                         <label><input  type="checkbox" name="Dinner" value="Dinner" className="filterForm-checkbox" />Dinner</label>
                         <br/>
                         <h3>Age Range</h3>
-                        <label><input  type="checkbox" name="eighteen-twentyfive"  value="fifteen" className="filterForm-checkbox" />18 to 25 </label>
+                        <label><input  type="checkbox" name="eighteen-twentyfive"  value="18-25" className="filterForm-checkbox" />18 to 25 </label>
                         <br/>
                         <label><input  type="checkbox" name="twentySix-forty" value="twenty-six" className="filterForm-checkbox" />26 to 40 </label>
                         <br/>
@@ -52,10 +64,10 @@ class Filter extends Component {
                     </div>
             </form>
             <div>
-                <p>Find my Foodmate: ({this.props.userData.length})</p>
+                <p>Find my Foodmate: ({this.props.userFilter.length})</p>
                 <br />
                 <div>
-                <button type="submit" id="testButton" onClick={ handleSubmit }>testbutton</button>
+                <button type="submit" value="18-25" onClick={ handleSubmit }>testbutton</button>
                 </div>
             </div>
         </div>
@@ -65,10 +77,10 @@ class Filter extends Component {
 }
 
 
-const mapStateToProps = ({userData}) => ({userData}) 
+const mapStateToProps = ({userData, userFilter}) => ({userData, userFilter}) 
 
 
-export default connect(mapStateToProps)(Filter)
+export default connect(mapStateToProps, { updateLunch, updateAge })(Filter)
 
 // export defaut connect(null, null)(Filter)
             
