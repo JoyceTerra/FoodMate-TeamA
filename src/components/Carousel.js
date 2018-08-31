@@ -2,9 +2,15 @@ import React from 'react';
 import Swipeable from 'react-swipeable';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom'
+import img1 from '../images/home.png'
+import img2 from '../images/mail.png'
+import img3 from '../images/message.png'
+import img4 from '../images/chat.png'
+import img5 from '../images/profile.png'
+import './carousel.css';
 
 const IMG_WIDTH = "100vw";
-const IMG_HEIGHT = "72vh";
+const IMG_HEIGHT = "68vh";
 
 const RIGHT = '-1';
 const LEFT = '+1';
@@ -30,7 +36,7 @@ class SimpleCarousel extends React.Component {
   }
 
   clickedFood() {
-    console.log("I is push you to new route, ok?!")
+  
   }
 
   render() {
@@ -42,7 +48,7 @@ class SimpleCarousel extends React.Component {
     };
     return (
       <div>
-      <div>
+      <div >
       <h2>What type of cuisine </h2>
       <h2 id="styling">you prefer?</h2>
       </div>
@@ -62,8 +68,16 @@ class SimpleCarousel extends React.Component {
           </div>
         </Swipeable>
         <div >
-        <Link to={"/filter"}><p onClick={() => this.clickedFood()}>Choose cuisine</p></Link>
+        <Link to={"/filter"}><button id="button" onClick={() => this.clickedFood()}>Choose cuisine</button></Link>
         </div>
+        <div className ="menu-icons">
+          <img src={img1} alt="Home" width ="30" hspace ="25" height="30"/> 
+          <img src={img2} alt="Home" width ="30" hspace ="25" height="30"/>
+          <img src={img3} alt="Home"  width ="30" hspace ="25" height="30"/>
+          <img src={img4} alt="Home"  width ="30" hspace ="25" height="30"/>
+          <img src={img5} alt="Home"  width ="30" hspace ="25" height="30"/>        
+        
+        </div> 
       </div>
     )
   }
