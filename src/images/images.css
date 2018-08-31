@@ -1,26 +1,27 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+.IMAGES  {
+    
+    width : 100px;
+    height: 100px;
+    position : absolute
+}
+
+
+  .IMAGES-wrapper {
+    background: lightgray;
+    left: -100px;
+    position: absolute;
+    
   }
   
-  h2 {
-    text-align: center
+  .mask {
+    left: 450px;
+    top: 110px;
+    overflow: hidden;
+    width: 1100px;
+    height: 800px;
+    position: absolute;
   }
-  
-  h2#styling {
-    text-align: center
-  }
-  
-  p {
-    font-size: 1.15em;
-    text-align: center;
-    padding: 5px;
-    margin-left: 100px;
-    margin-right: 100px;
-    background-color: rgb(211, 208, 208)
-  }
-  
-  button#menu {
-    background-color: rgb(231, 231, 238)
+
+  h1{
+      text-align: center;
   }

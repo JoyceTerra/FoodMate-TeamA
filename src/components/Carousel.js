@@ -64,6 +64,7 @@ class SimpleCarousel extends React.Component {
         <div >
         <Link to={"/filter"}><p onClick={() => this.clickedFood()}>Choose cuisine</p></Link>
         </div>
+        {/* <div><p>djhfdjfdjf</p></div> */}
       </div>
     )
   }
