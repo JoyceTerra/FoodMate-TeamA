@@ -75,27 +75,27 @@ class Filter extends Component {
             <form className="filterForm">
                     <label>I want to have</label>
                     <div className ="Check">
-                        <label><input type="radio" name="Lunch"  value="Lunch" className="filterForm-checkbox" onClick={ handleLunch } />Lunch</label>
+                        <label><input type="radio" name="meal"  value="Lunch" className="filterForm-checkbox" onClick={ handleLunch } />Lunch</label>
                         <br/>
-                        <label><input type="radio" name="Dinner" value="Dinner" className="filterForm-checkbox" onClick={ handleDinner }/>Dinner</label>
+                        <label><input type="radio" name="meal" value="Dinner" className="filterForm-checkbox" onClick={ handleDinner }/>Dinner</label>
                         <br/>
                         <h3>Age Range</h3>
-                        <label><input  type="radio" name="eighteen-twentyfive"  value="18-25" className="filterForm-checkbox" onClick={ handle25 } />18 to 25 </label>
+                        <label><input  type="radio" name="age"  value="18-25" className="filterForm-checkbox" onClick={ handle25 } />18 to 25 </label>
                         <br/>
-                        <label><input  type="radio" name="twentySix-forty" value="26-40" className="filterForm-checkbox" onClick={ handle40 } />26 to 40 </label>
+                        <label><input  type="radio" name="age" value="26-40" className="filterForm-checkbox" onClick={ handle40 } />26 to 40 </label>
                         <br/>
-                        <label><input  type="radio" name="fortyOne-sixtyfive" value="41-65" className="filterForm-checkbox" onClick={ handle65 } />41 to 65 </label>
+                        <label><input  type="radio" name="age" value="41-65" className="filterForm-checkbox" onClick={ handle65 } />41 to 65 </label>
                         <br/>
-                        <label><input  type="radio" name="higher" value="Older" className="filterForm-checkbox" onClick={ handleOlder } />65+</label>
+                        <label><input  type="radio" name="age" value="Older" className="filterForm-checkbox" onClick={ handleOlder } />65+</label>
                         <br/>
                         <h3>Price Range</h3>
-                        <label><input  type="radio" name="fifteen-range"  value="15-35" className="filterForm-checkbox" onClick={ price35 }/>15 to 35 euros</label>
+                        <label><input  type="radio" name="price"  value="15-35" className="filterForm-checkbox" onClick={ price35 }/>15 to 35 euros</label>
                         <br/>
-                        <label><input  type="radio" name="twentySix-range" value="35-50" className="filterForm-checkbox" onClick={ price50 } />35 to 50 euros</label>
+                        <label><input  type="radio" name="price" value="35-50" className="filterForm-checkbox" onClick={ price50 } />35 to 50 euros</label>
                         <br/>
-                        <label><input  type="radio" name="fortyOne-range" value="50-75" className="filterForm-checkbox" onClick={ price75 } />50 to 75 euros</label> 
+                        <label><input  type="radio" name="price" value="50-75" className="filterForm-checkbox" onClick={ price75 } />50 to 75 euros</label> 
                         <br/>
-                        <label><input  type="radio" name="fortyOne-range" value="high" className="filterForm-checkbox" onClick={ priceHigh } />75+ euros</label> 
+                        <label><input  type="radio" name="price" value="high" className="filterForm-checkbox" onClick={ priceHigh } />75+ euros</label> 
                         <br/>
                         <br/>
                         <button type="button" onClick={ refreshPage }> <span>Refresh</span> </button>
