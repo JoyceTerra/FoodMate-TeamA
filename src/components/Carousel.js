@@ -10,7 +10,7 @@ import img5 from '../images/profile.png'
 import './carousel.css';
 
 const IMG_WIDTH = "100vw";
-const IMG_HEIGHT = "72vh";
+const IMG_HEIGHT = "68vh";
 
 const RIGHT = '-1';
 const LEFT = '+1';

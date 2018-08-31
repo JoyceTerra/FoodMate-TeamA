@@ -25,7 +25,6 @@ const App = () => (
   <Provider store={ store }> 
     <div style={styles}>
       <div>
-        <Menu />
         <Route exact path="/" component={ Carousel } />
         <Route  exact path="/filter/" component={ Filter } /> 
         <Route exact path="/ProfileList" component= { ProfileList } />
