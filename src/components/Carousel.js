@@ -30,7 +30,7 @@ class SimpleCarousel extends React.Component {
   }
 
   clickedFood() {
-    console.log("I is push you to new route, ok?!")
+  
   }
 
   render() {
