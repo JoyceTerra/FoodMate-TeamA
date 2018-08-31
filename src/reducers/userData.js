@@ -4,7 +4,7 @@
 export const userData = [
         {
             name: 'Rob',
-            //src:require("../image/1.jpg"),
+            src:require("../images/beach_beard_boy_1121_WcOAU.jpg"),
             Age: 30,
             MealType: "Dinner",
             PriceRange: 40,
@@ -12,7 +12,7 @@ export const userData = [
         },
         {
             name: 'Henry',
-            //src:require("../image/2.jpg"),
+            src:require("../images/adult-beard-boy-220453.jpg"),
             Age: 60,
             MealType: "Lunch",
             PriceRange: 20,
@@ -20,7 +20,7 @@ export const userData = [
         },
         {
             name: 'Rita',
-            //src:require("../image/3.jpg"),
+            src:require("../images/beautiful_blur_caref_Si88V.jpg"),
             Age: 36,
             MealType: "Lunch",
             PriceRange: 60,
@@ -28,7 +28,7 @@ export const userData = [
         },
         {
             name: 'Sheena',
-            //src:require("../image/4.jpg"),
+            src:require("../images/Webp.net-compress-image.jpg"),
             Age: 36,
             MealType: "Dinner",
             PriceRange: 60,
