@@ -36,7 +36,7 @@ export default class Menu extends Component {
         }
 
     clickedFoodP() {
-        console.log("You clicked on Food preferences!")
+        console.log('You clicked on Food Preferences!')
         }
 
     clickedMessage() {
@@ -68,7 +68,7 @@ export default class Menu extends Component {
                   }}
                 >
                   <button onClick={() => this.clickedProfile()}> Profile </button>
-                  <button onClick={() => this.clickedFoodP()}> Food preferences </button>
+                  <button onClick={() => this.clickedFoodP()}> Food preferences</button>
                   <button onClick={() => this.clickedMessage()}> Message </button>
                   <button onClick={() => this.clickedInvite()}> Invite </button>
                   <button onClick={() => this.clickedSettings()}> Settings </button>

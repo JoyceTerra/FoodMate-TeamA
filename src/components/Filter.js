@@ -1,75 +1,121 @@
 import React, { Component } from 'react';
 import './Filter.css'
 import {connect} from 'react-redux';
-// import { reduxForm, Field } from 'redux-form'
-import { updateLunch, updateAge } from './actions/updateFilter'
-//import store from '../store'
+import { Link } from 'react-router-dom'
+import users from '../reducers/userData'
+import { updateLunch, updateDinner, update25, update40, update65, updateOlder, update35, update50, update75, updateHigh } from '../actions/updateFilter'
 
 
 class Filter extends Component { 
+    constructor(props) {
+        super(props) 
+        this.state= {
+            users
+        }
+    }
+
+    
    render(){
 
        const handleSubmit = (event) => {
            event.preventDefault()
-           const ages = event.target.value.split('-')
-           const users = this.props.userData
-        //    const lunchFilter = users.filter(user => user.MealType === "Lunch")
-        //    const dinnerFilter = users.filter(user => user.MealType === "Dinner")
-            const minage = ages[0]
-            const maxage = ages[1]
-           const ageTo25 = users.filter(user => user.Age <= maxage && user.Age >= minage)
-        //    console.log(lunchFilter)
-        //    console.log(dinnerFilter)
-        //    console.log(ageTo25)
-            this.props.updateAge(users, minage, maxage)
-            this.props.updateLunch(users)
+           console.log(this.props.userFilter)
        }
+
+       const users = this.props.userData
+       let newUserFilter = this.props.userFilter
        
+       
+       const handleLunch = () => {
+        let lunchFilter = users.filter(user => user.MealType === "Lunch")
+        this.props.updateLunch(lunchFilter)
+       }
+
+       const handleDinner = () => {
+        let dinnerFilter = users.filter(user => user.MealType === "Dinner")
+        this.props.updateDinner(dinnerFilter)
+       }
+
+       const handle25 = () => {
+        let ageTo25 = newUserFilter.filter(user => user.Age <= 25 && user.Age >= 18)
+        this.props.update25(ageTo25)
+       }
+
+       const handle40 = () => {
+        let ageTo40 = newUserFilter.filter(user => user.Age <= 40 && user.Age >= 26)
+        this.props.update40(ageTo40)
+       }
+
+       const handle65 = () => {
+        let ageTo65 = newUserFilter.filter(user => user.Age <= 65 && user.Age >= 41)
+        this.props.update65(ageTo65)
+       }
+
+       const handleOlder = () => {
+        let ageToOlder = newUserFilter.filter(user => user.Age > 65)
+        this.props.updateOlder(ageToOlder)
+       }
+
+       const price35 = () => {
+        let priceTo35 = newUserFilter.filter(user => user.PriceRange >= 15 && user.PriceRange <= 35)
+        this.props.update35(priceTo35)
+       }
+
+       const price50 = () => {
+        let priceTo50 = newUserFilter.filter(user => user.PriceRange >= 35 && user.PriceRange <= 50)
+        this.props.update50(priceTo50)
+       }
+
+       const price75 = () => {
+        let priceTo75 = newUserFilter.filter(user => user.PriceRange >= 50 && user.PriceRange <= 75)
+        this.props.update75(priceTo75)
+       }
+
+       const priceHigh = () => {
+        let priceToHigh = newUserFilter.filter(user => user.PriceRange > 75)
+        this.props.updateHigh(priceToHigh)
+       }
+
+       function refreshPage(){ 
+        window.location.reload(); 
+    }
+
     return (
         <div>
-            <form 
-               className="filterForm"
-               onSubmit={ handleSubmit }
-             >
+            <form className="filterForm">
                     <label>I want to have</label>
                     <div className ="Check">
-                        <label><input  type="radio" name="mealtime"  value="Lunch" className="filterForm-checkbox" />Lunch</label>
+
+                        <label><input type="radio" name="meal"  value="Lunch" className="filterForm-checkbox" onClick={ handleLunch } />Lunch</label>
                         <br/>
-                        <label><input  type="radio" name="mealtime" value="Dinner" className="filterForm-checkbox" />Dinner</label>
+                        <label><input type="radio" name="meal" value="Dinner" className="filterForm-checkbox" onClick={ handleDinner }/>Dinner</label>
                         <br/>
                         <h3>Age Range</h3>
-                        <label><input  type="checkbox" name="eighteen-twentyfive"  value="18-25" className="filterForm-checkbox" />18 to 25 </label>
+                        <label><input  type="radio" name="age"  value="18-25" className="filterForm-checkbox" onClick={ handle25 } />18 to 25 </label>
                         <br/>
-                        <label><input  type="checkbox" name="twentySix-forty" value="twenty-six" className="filterForm-checkbox" />26 to 40 </label>
+                        <label><input  type="radio" name="age" value="26-40" className="filterForm-checkbox" onClick={ handle40 } />26 to 40 </label>
                         <br/>
-                        <label><input  type="checkbox" name="fortyOne-sixtyfive" value="forty-one" className="filterForm-checkbox"  />41 to 65 </label>
+                        <label><input  type="radio" name="age" value="41-65" className="filterForm-checkbox" onClick={ handle65 } />41 to 65 </label>
                         <br/>
-                        <label><input  type="checkbox" name="sixtSix- seventyfive"  value="sixty-six" className="filterForm-checkbox"  />66 to 75 </label>
-                        <br/>
-                        <label><input  type="checkbox" name="higher" value="Older" className="filterForm-checkbox"  />Older</label>
-                        <br/>
+                        <label><input  type="radio" name="age" value="Older" className="filterForm-checkbox" onClick={ handleOlder } />65+</label>
                         <br/>
                         <h3>Price Range</h3>
-                        <label><input  type="checkbox" name="fifteen-range"  value="fifteen" className="filterForm-checkbox" />15 to 25 euros</label>
+                        <label><input  type="radio" name="price"  value="15-35" className="filterForm-checkbox" onClick={ price35 }/>15 to 35 euros</label>
                         <br/>
-                        <label><input  type="checkbox" name="twentySix-range" value="twenty-six" className="filterForm-checkbox" />26 to 40 euros</label>
+                        <label><input  type="radio" name="price" value="35-50" className="filterForm-checkbox" onClick={ price50 } />35 to 50 euros</label>
                         <br/>
-                        <label><input  type="checkbox" name="fortyOne-range" value="forty-one" className="filterForm-checkbox"  />41 to 65 euros</label>
+                        <label><input  type="radio" name="price" value="50-75" className="filterForm-checkbox" onClick={ price75 } />50 to 75 euros</label> 
                         <br/>
-                        <label><input  type="checkbox" name="sixtSix-range"  value="sixty-six" className="filterForm-checkbox"  />66 to 100 euros</label>
-                        <br/>
-                        <label><input  type="checkbox" name="higher" value="higher" className="filterForm-checkbox"  />Higher</label>
+                        <label><input  type="radio" name="price" value="high" className="filterForm-checkbox" onClick={ priceHigh } />75+ euros</label> 
                         <br/>
                         <br/>
-                        <button type="submit" className="filterForm-SubmitButton">Submit</button> 
+                        <button type="button" onClick={ refreshPage }> <span>Refresh</span> </button>
                     </div>
             </form>
             <div>
-                <p>Find my Foodmate: ({this.props.userFilter.length})</p>
+                <p>Persons on FoodMate: ({this.props.userData.length})</p>
+                <p onClick={ handleSubmit }><Link to={"/ProfileList"}>Persons interested in a meal: </Link>({this.props.userFilter.length})</p>
                 <br />
-                <div>
-                <button type="submit" value="18-25" onClick={ handleSubmit }>testbutton</button>
-                </div>
             </div>
         </div>
                 )
@@ -81,9 +127,8 @@ class Filter extends Component {
 const mapStateToProps = ({userData, userFilter}) => ({userData, userFilter}) 
 
 
-export default connect(mapStateToProps, { updateLunch, updateAge })(Filter)
+export default connect(mapStateToProps, { updateLunch, updateDinner, update25, update40, update65, updateOlder, update35, update50, update75, updateHigh })(Filter)
 
-// export defaut connect(null, null)(Filter)
             
 
 

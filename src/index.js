@@ -9,7 +9,7 @@ import Menu from './components/Menu'
 import { Provider } from 'react-redux'
 // import Name from './components/name'
 import Filter from './components/Filter'
-// import Home from './components/Home'
+import ProfileList from './components/ProfileList'
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -28,6 +28,7 @@ const App = () => (
         <Menu />
         <Route exact path="/" component={ Carousel } />
         <Route  exact path="/filter/" component={ Filter } /> 
+        <Route exact path="/ProfileList" component= { ProfileList } />
       {/*  <Name />  */}
     </div>
     </div>
