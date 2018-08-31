@@ -2,6 +2,12 @@ import React from 'react';
 import Swipeable from 'react-swipeable';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom'
+import img1 from '../images/home.png'
+import img2 from '../images/mail.png'
+import img3 from '../images/message.png'
+import img4 from '../images/chat.png'
+import img5 from '../images/profile.png'
+import './carousel.css';
 
 const IMG_WIDTH = "100vw";
 const IMG_HEIGHT = "72vh";
@@ -64,7 +70,14 @@ class SimpleCarousel extends React.Component {
         <div >
         <Link to={"/filter"}><p onClick={() => this.clickedFood()}>Choose cuisine</p></Link>
         </div>
-        {/* <div><p>djhfdjfdjf</p></div> */}
+        <div className ="menu-icons">
+          <img src={img1} alt="Home" width ="20" hspace ="30"/>
+          <img src={img2} alt="Home" width ="20" hspace ="20"/>
+          <img src={img3} alt="Home" width ="20" hspace ="20"/>
+          <img src={img4} alt="Home" width ="20" hspace ="20"/>
+          <img src={img5} alt="Home" width ="20" hspace ="20"/>        
+        
+        </div> 
       </div>
     )
   }
