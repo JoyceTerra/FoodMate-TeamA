@@ -48,7 +48,7 @@ class SimpleCarousel extends React.Component {
     };
     return (
       <div>
-      <div>
+      <div >
       <h2>What type of cuisine </h2>
       <h2 id="styling">you prefer?</h2>
       </div>
@@ -68,14 +68,14 @@ class SimpleCarousel extends React.Component {
           </div>
         </Swipeable>
         <div >
-        <Link to={"/filter"}><p onClick={() => this.clickedFood()}>Choose cuisine</p></Link>
+        <Link to={"/filter"}><button id="button" onClick={() => this.clickedFood()}>Choose cuisine</button></Link>
         </div>
         <div className ="menu-icons">
-          <img src={img1} alt="Home" width ="20" hspace ="30"/>
-          <img src={img2} alt="Home" width ="20" hspace ="20"/>
-          <img src={img3} alt="Home" width ="20" hspace ="20"/>
-          <img src={img4} alt="Home" width ="20" hspace ="20"/>
-          <img src={img5} alt="Home" width ="20" hspace ="20"/>        
+          <img src={img1} alt="Home" width ="30" hspace ="25" height="30"/> 
+          <img src={img2} alt="Home" width ="30" hspace ="25" height="30"/>
+          <img src={img3} alt="Home"  width ="30" hspace ="25" height="30"/>
+          <img src={img4} alt="Home"  width ="30" hspace ="25" height="30"/>
+          <img src={img5} alt="Home"  width ="30" hspace ="25" height="30"/>        
         
         </div> 
       </div>
