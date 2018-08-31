@@ -1,4 +1,4 @@
-import { UPDATE_MI } from '../components/actions/updateMi'
+import { UPDATE_MI } from '../actions/updateMi'
 
 export default (state = {}, action = {}) => {
     switch(action.type) {

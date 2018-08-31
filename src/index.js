@@ -9,7 +9,6 @@ import Menu from './components/Menu'
 import { Provider } from 'react-redux'
 // import Name from './components/name'
 import Filter from './components/Filter'
-import Home from './components/Home'
 
 const styles = {
   fontFamily: 'sans-serif',
